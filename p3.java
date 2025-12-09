@@ -1,29 +1,29 @@
+
+
 import java.util.*;
 class Main{
-	public static void main(String []args){
-		Scanner sc=new Scanner(System.in);
-		int a=sc.nextInt();
-		int b=sc.nextInt();
-		int c=sc.nextInt();
-		int res=UserMainCode.calculatesum(a,b,c);
-		System.out.println(res);
-	}
-}
-class UserMainCode{
-	public static int calculatesum(int n1,int n2,int n3){
-		if(n1==13){
-			if(n2==13) n3=0;
-			n1=0;
-			n2=0;
+	public static void main(String args[]){
+		Scanner scan=new Scanner(System.in);
+		int n=scan.nextInt();
+		
+		int arr[]=new int[n];
+		
+		for(int i=0;i<n;i++){
+			arr[i]=scan.nextInt();
 		}
-		if(n2==13){
-			n2=0;
-			n3=0;
-		}
-		if(n3==13){
-			n3=0;
-		}
-		return n1+n2+n3;
+		
+		System.out.print(UserMainCode.findTriplet(arr));
 		
 	}
+}
+
+class UserMainCode{
+	   public static boolean findTriplet(int[] nums){
+	   	for(int i=0;i<nums.length-2;i++){
+	   		if(nums[i]==nums[i+1] && nums[i+1]==nums[i+2]){
+	   			return true;
+	   		}
+	   	}
+	   	return false;
+	   } 
 }
